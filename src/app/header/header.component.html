@@ -1,0 +1,15 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-default">
+      <a href="#" class="navbar-brand">{{title}}</a>
+    </div>
+    <ul class="city-select nav navbar-nav" *ngIf="active">
+      <li>
+        <select class="form-control select" (change)="changeLocation($event)">
+          <option>Select City ...</option>
+          <option *ngFor="let location of locations">{{location}}</option>
+        </select>
+      </li>
+    </ul>
+  </div>
+</nav>

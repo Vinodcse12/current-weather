@@ -1,0 +1,30 @@
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">{{cityWeatherInfo.name}}</div>
+    <div class="panel-body">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            <span>
+              Temperature
+              <strong>{{cityWeatherInfo.main?.temp_min - 273.15 | number:'1.0-0'}}</strong><sup>o</sup>C
+            </span>
+          </h5>
+          <p class="card-text">
+            Wind : <strong>{{cityWeatherInfo.wind?.speed }}</strong>meter/sec
+          </p>
+          <p class="card-text">
+            Maximum Temperature: : <strong>{{cityWeatherInfo.main?.temp - 273.15 |
+              number:'1.0-0'}}<sup>o</sup>C</strong>meter/sec
+          </p>
+
+          <p class="card-text">
+            Minimum Temperature: <strong>{{cityWeatherInfo.main?.temp_min - 273.15 |
+              number:'1.0-0'}}<sup>o</sup>C</strong>meter/sec
+          </p>
+          <a (click)="goToForcast(cityWeatherInfo.name)" class="btn btn-primary">Go Forcast</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

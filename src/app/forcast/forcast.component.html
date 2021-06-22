@@ -1,0 +1,22 @@
+<h4>{{loc}} Current weather forecast</h4>
+<ul class="list-group">
+  <a class="list-group-item" *ngFor="let item of forecast">
+    <div class="panel panel-default">
+      <div class="panel-heading">{{item.dt*1000 | date:'MMM d, y, h:mm:ss a'}}</div>
+      <div class="panel-body">
+        <p>Temperature : {{item.main?.temp - 273.15 | number:'1.0-0'}}<sup>o</sup>C</p>
+        <p>Minimum Temperature : {{item.main?.temp_min - 273.15 | number:'1.0-0'}}<sup>o</sup>C</p>
+        <p>Maximum Temperature : {{item.main?.temp_max - 273.15 | number:'1.0-0'}}<sup>o</sup>C</p>
+        <p>Pressure : {{item.main?.pressure | number:'1.0-0'}}mb</p>
+        <p>Sea Level : {{item.main?.sea_level | number:'1.0-0'}}m</p>
+        <p>Ground Level : {{item.main?.grnd_level | number:'1.0-0'}}m</p>
+        <p>Humidity : {{item.main?.humidity | number:'1.0-0'}}%</p>
+        <ul>
+          <label *ngFor='let w of item.weather'>
+            {{w?.main }}: {{w?.description }}
+          </label>
+        </ul>
+      </div>
+    </div>
+  </a>
+</ul>
